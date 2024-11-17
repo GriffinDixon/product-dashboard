@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductList from './ProductList'; 
+import ProductList from './ProductList'; // Make sure this path is correct based on your file structure
 
 function App() {
   const products = [
