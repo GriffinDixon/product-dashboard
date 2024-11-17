@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
-import ProductList from './components/ProductList';
+import ProductList from './components/ProductList'
+import AddProductForm from '/components/AddProductForm';
 
 function App() {
   const products = [
@@ -11,6 +12,10 @@ function App() {
     { id: 5, name: 'Product 5', price: 22.99, description: 'Description of Product 5' }
   ];
 
+  // Add new product
+  const addProduct = (product) => {
+    products ((prev) => [...prev, product]);
+  };
   return (
     <div className="App">
       <h1>Product List</h1>
