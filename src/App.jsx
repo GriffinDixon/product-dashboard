@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductList from './ProductList'; // Make sure this path is correct based on your file structure
+import ProductList from './components/ProductList'; // Make sure the path is correct
 
 function App() {
   const products = [
@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <h1>Product Dashboard</h1>
-      <ProductList products={products} />
+      <ProductList products={products} /> {/* Pass the products array as a prop */}
     </div>
   );
 }
