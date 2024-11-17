@@ -1,15 +1,14 @@
-import React from 'react';
-import ProductItem from './ProductItem'; // Make sure the path is correct
+// src/components/ProductList.jsx
+import React from "react";
+import ProductItem from "./ProductItem";
 
 function ProductList({ products }) {
   return (
-    <div>
-      {products.map(product => (
-        <ProductItem
-          key={product.id}
-          name={product.name}
-          price={product.price}
-          description={product.description}
+    <div className="product-list">
+      {products.map((product) => (
+        <ProductItem 
+          key={product.id} // Use unique id as key
+          product={product} 
         />
       ))}
     </div>
