@@ -1,19 +1,28 @@
-import React from 'react';
-import ProductList from './components/ProductList'; // Make sure the path is correct
+// src/App.jsx
+import React, { useState } from 'react';
+import ProductList from './components/ProductList';
+import AddProductForm from './components/AddProductForm';
 
 function App() {
-  const products = [
-    { id: 1, name: 'Laptop', price: 1200, description: 'High performance laptop' },
-    { id: 2, name: 'Smartphone', price: 800, description: 'Latest model smartphone' },
-    { id: 3, name: 'Tablet', price: 400, description: 'Portable tablet with good display' },
-    { id: 4, name: 'Headphones', price: 100, description: 'Noise-cancelling headphones' },
-    { id: 5, name: 'Smartwatch', price: 250, description: 'Smartwatch with fitness tracking' },
-  ];
+  // Initial list of products
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Product 1', price: 19.99, description: 'Description of Product 1' },
+    { id: 2, name: 'Product 2', price: 25.50, description: 'Description of Product 2' },
+    { id: 3, name: 'Product 3', price: 14.75, description: 'Description of Product 3' },
+    { id: 4, name: 'Product 4', price: 30.00, description: 'Description of Product 4' },
+    { id: 5, name: 'Product 5', price: 22.99, description: 'Description of Product 5' }
+  ]);
+
+  // Function to handle adding a new product
+  const addProduct = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
 
   return (
-    <div>
+    <div className="App">
       <h1>Product Dashboard</h1>
-      <ProductList products={products} /> {/* Pass the products array as a prop */}
+      <AddProductForm addProduct={addProduct} />
+      <ProductList products={products} />
     </div>
   );
 }
