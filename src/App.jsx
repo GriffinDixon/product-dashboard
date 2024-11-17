@@ -4,6 +4,7 @@ import ProductList from './components/ProductList';
 import AddProductForm from './components/AddProductForm';
 
 function App() {
+  // Initial product list
   const [products, setProducts] = useState([
     { id: 1, name: 'Product 1', price: 19.99, description: 'Description of Product 1' },
     { id: 2, name: 'Product 2', price: 25.50, description: 'Description of Product 2' },
@@ -12,8 +13,9 @@ function App() {
     { id: 5, name: 'Product 5', price: 22.99, description: 'Description of Product 5' }
   ]);
 
+  // Add new product function
   const addProduct = (product) => {
-    setProducts((prev) => [...prev, product]);
+    setProducts((prevProducts) => [...prevProducts, { ...product, id: prevProducts.length + 1 }]);
   };
 
   return (
@@ -26,4 +28,5 @@ function App() {
 }
 
 export default App;
+
 
